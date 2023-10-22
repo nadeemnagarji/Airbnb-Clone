@@ -17,10 +17,12 @@ body{
   width: 100%;
 }
 .homepage-wrapper{
-    width: 95%;
+    
     margin: auto;
 }
 .navbar{
+   width: 95%;
+   margin: auto;
     padding: 1rem 0rem; 
     display: flex;
     justify-content: space-between;
@@ -29,11 +31,13 @@ body{
 }
 .nav-links{
     /* background-color:green; */
-    max-width: 38%;
-    flex-grow: 1;
+    max-width: 40%;
+
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap:50px;
     font-size: 1.6rem;
+    /* background-color: blue; */
     
 }
 .nav-links a{
@@ -42,14 +46,15 @@ body{
 }
 .host{
     /* background-color: green; */
-    width: 25%;
+    width: 18%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 .host a{
     text-decoration: none;
     color: #FFFFFF;
+    font-size: 1.4rem;
 }
 .user{
     background-color: #FFFFFF;
@@ -72,14 +77,16 @@ body{
 /*//////////////////////////////////////////////////////////////////////*/
 .search-div{
     width: 60%;
-    height: 4rem;
+    padding: 0.8rem 0rem;
+    padding-left: 3.2rem;
+    padding-right: 0.8rem;
     background-color: white;
     margin: auto ;
     margin-top: 20px;
     border-radius: 50px;
     display:flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-bottom: 2rem;
 }
 .search-div p{
@@ -121,6 +128,19 @@ body{
   .location-dropdown li:hover {
     background-color: #f0f0f0;
   }
+  .search-icon{
+    background-color: #DE3151;
+    width: 4.8rem;
+    height: 4.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
+  .search-icon i{
+    font-size: 1.3rem;
+    color: white;
+  }
   /*//////////////////////////////////////////////////////////////////////////////////////////////////*/
   .homeimg {
    
@@ -135,6 +155,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: end;
+    border-radius: 8px;
   }
   .homeimg h2{
     font-size: 4.8rem;
@@ -164,6 +185,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 4.8rem;
+
   }
   .cards-section h5{
     font-size: 3.6rem;
@@ -171,6 +193,17 @@ body{
   .cards{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .card{
+    display: flex;
+    flex-direction: column;
+   
+  }
+  .card img{
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
   .card-info{
     width:100%;
@@ -180,6 +213,8 @@ body{
     flex-direction: column;
     padding: 24px 16px 96px 16px;
     gap: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
   }
   .card-info h6{
     font-size: 3.6rem;
@@ -223,16 +258,20 @@ body{
     display: flex;
    width: 100%;
    justify-content: space-between;
+ 
+   overflow: hidden;
   }
   .discover-card1{
     background-image: url("Assets/discover1.jfif");
     background-position: center; /* Center the image */
     background-size: cover; /* Resize the background image to cover the entire container */
+      border-radius: 8px;
   }
   .discover-card2{
     background-image: url("Assets/discover2.jfif");
     background-position: center; /* Center the image */
     background-size: cover; /* Resize the background image to cover the entire container */
+      border-radius: 8px;
   }
   .discovercard{
     width: 48%;
@@ -316,6 +355,7 @@ body{
     margin: 0 8rem;
     padding: 8rem 8rem;
     height: 64rem;
+    border-radius: 8px;
    }
    .Questions div{
     width: 50%;
@@ -347,7 +387,7 @@ body{
      .details{
         margin: auto;
         margin: 0 8rem;
-        padding: 8rem 0rem;
+        padding-top:8rem;
         height: 64rem;
      }
      .details h5{
@@ -387,7 +427,7 @@ body{
         }
         .heading-details p{
             font-size: 1.4rem;
-            color: var(grey, #6B7280);
+            color: var(--gray-500, #6B7280);
             font-weight: 400;
         }
         
@@ -397,6 +437,7 @@ body{
             margin: 0 8rem;
            display: flex;
            justify-content: space-between;
+           /* background-color: red; */
            
          }
          
@@ -404,7 +445,7 @@ body{
             color:black;
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
+            justify-content: start;
             gap:20px;
          }
          .footer h6{
@@ -415,4 +456,38 @@ body{
             font-size: 1.4rem;
             color: var(grey, #6B7280);
             font-weight: 400;
+         }
+         /*///////////////////////////////////////////////////////////*/
+
+         .handles{
+          padding: 8rem 8rem;
+          display: flex;
+          justify-content: space-between;
+          font-size: 1.4rem;
+          font-weight: 400;
+          color: var(--gray-600, #4B5563);;
+         }
+         .handles-left{
+          display: flex ;
+          align-items: center;
+          gap: 5px;
+         }
+         .handles-right{
+          display: flex ;
+          align-items: center;
+          justify-content: space-between;
+          width: 30rem;
+          /* background-color: red; */
+         }
+         .handles-right div:first-child{
+          display: flex;
+          justify-content: space-evenly;
+          width:14rem;
+          /* background-color: green; */
+          align-items: center;
+         }
+         
+         .dollar{
+          display: flex;
+          gap: 5px;
          }

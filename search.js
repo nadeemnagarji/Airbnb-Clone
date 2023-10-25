@@ -100,7 +100,7 @@ function createHotelCard(hotelData) {
     const pricing = document.createElement("div");
     pricing.classList.add("pricing");
     const priceParagraph = document.createElement("p");
-    priceParagraph.innerHTML = hotelData.price.rate;
+    priceParagraph.innerHTML =`&#36;${hotelData.price.rate}`;
     const priceSpan = document.createElement("span");
     priceSpan.textContent = "/night";
 

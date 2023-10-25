@@ -73,7 +73,31 @@ body{
     font-size: 0.5rem;
 }
 
+.guests-dropdown{
+ 
+  padding: 1rem 2rem;
+  position: absolute;
+  width: 300px;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+  border-radius: 20px;
+  display: flex;
 
+  flex-direction: column;
+  gap:2rem;
+  margin-top: 2.6rem;
+  display: none;
+}
+.guests-dropdown div {
+ padding: 1rem 1rem;
+ font-size: 2rem;
+ font-weight: 500;
+ display: flex;
+ justify-content: space-between;
+
+}
 /*//////////////////////////////////////////////////////////////////////*/
 .search-div{
     width: 60%;
@@ -198,6 +222,7 @@ body{
   .card{
     display: flex;
     flex-direction: column;
+    background-color: red;
    
   }
   .card img{

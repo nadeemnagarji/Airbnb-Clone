@@ -36,7 +36,7 @@
                     <input class="hide-search-bar" id="locationsearch" type="text" placeholder="Where are you going">
                     <div class="location-dropdown" id="locationDropdown">
                         <h5>Select by region</h5>
-                        <ul>
+                        <ul id="dropdownList">
                           <li>Europe</li>
                           <li>United States</li>
                           <li>United Kingdom</li>
@@ -44,12 +44,19 @@
                         </ul>
                       </div>
                 </div>
-                <div><p>Check in</p> <input class="hide-search-bar"  id="locationsearch" type="date" placeholder="Add dates">
+                <div><p>Check in</p> <input class="hide-search-bar"  id="checkIn" type="date" placeholder="Add dates">
 
                 </div>
-                <div><p>Check out</p></div>
-                <div><p>Guests</p></div>
-                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div><p>Check out</p> <input class="hide-search-bar"  id="checkOut" type="date" placeholder="Add dates">
+                </div>
+                <div id="guests"><p>Guests</p>
+                <!-- <input id="guests" type="number"> -->
+                    <div class="guests-dropdown" id="guest-dropdown"> 
+                        <div><p>Adults</p> <input id="adults" type="number"></div>
+                        <div><p>Children</p> <input id="children" type="number"></div>
+                    </div>
+            </div>
+                <div class="search-icon" id="searchIcon"><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i></a></div>
                 
         </div>
         
@@ -181,5 +188,6 @@
     </div>
     </div>
     <script src="script.js"></script>
+    <script src="search.js"></script>
 </body>
 </html>

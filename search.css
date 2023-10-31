@@ -214,3 +214,65 @@ color: var(--gray-500, #6B7280);
     font-weight: 400;
     color: var(--gray-700, #374151);
 }
+.cost-breakdown, .direction{
+    padding: 0.5rem 1rem;
+    border-radius: 0.8rem;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    background-color: #DE3151;
+    color: white;
+}
+
+
+
+
+/* modal box styling*/
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+   
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background for the blur effect */
+}
+
+/* Styles for the modal content */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+    gap: 2rem ;
+}
+.modal-content p{
+    font-size: 2rem;
+}
+
+/* Styles for the close button (×) */
+.close-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 2rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    transition: background-color 0.5s ease;
+}
+.close-modal:hover{
+    background-color:  #DE3151;
+    color: wheat;
+    border: none;
+}

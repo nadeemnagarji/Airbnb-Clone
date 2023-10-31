@@ -4,6 +4,7 @@ const checkin = document.getElementById('dates')
 const place = document.getElementById('location')
 const guests = document.getElementById('guests')
 
+let uniqueId=1
 
 console.log(place);
 guests.innerText =localStorage.getItem('adults') + localStorage.getItem('children')
@@ -11,7 +12,7 @@ guests.innerText = localStorage.getItem('children')
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '14940e43d4msh46a7deca2fa030bp1953b0jsnd376090242c1',
+		'X-RapidAPI-Key': '049f28f1edmsh1e9b54344ca7716p16604fjsn224b048960d3',
 		'X-RapidAPI-Host': 'airbnb13.p.rapidapi.com'
 	}
 };
@@ -32,13 +33,39 @@ function loadHotels(inputData){
     
 }
 
+function createCostBreakdownModal(hotelData){
+    const modal = document.createElement("div")
+        modal.classList.add("modal")
+        const modalContent = document.createElement('div')
+        modalContent.classList.add("modal-content")
+        let totalCost = 0
+      hotelData.price.priceItems.forEach((item=>{
+        const para = document.createElement("p")
+        para.innerText = `${item.title} = ${item.amount} $`
+        modalContent.appendChild(para)
+        totalCost += item.amount++
+      }))
+      const para = document.createElement("p")
+      para.innerText = `Total = ${totalCost} $`
+      modalContent.appendChild(para)
+      const modalCloseButton = document.createElement("button")
+      modalCloseButton.classList.add("close-modal")
+      modalCloseButton.innerText = "Close"
+      modalCloseButton.addEventListener("click",function(){
+        modal.style.display = "none"
+      })
 
+      modal.appendChild(modalContent)
+      modalContent.appendChild(modalCloseButton)
+      return modal
+}
 function createHotelCard(hotelData) {
    
     // Create the main div element
     const hotelCard = document.createElement("div");
-    hotelCard.classList.add("hotel");
-
+    hotelCard.classList.add("hotel");  
+    hotelCard.id = `${uniqueId}`;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
     // Create the image element
     const image = document.createElement("img");
     image.src = hotelData.images[0];
@@ -111,6 +138,19 @@ function createHotelCard(hotelData) {
     ratingPricing.appendChild(document.createElement("div")); // Empty div for spacing
     ratingPricing.appendChild(pricing);
 
+     //adding  modal box button to the hotel card
+    const costBreakdown = document.createElement("button");
+    costBreakdown.id=`${uniqueId}-direction`
+    costBreakdown.classList.add("cost-breakdown")
+    costBreakdown.innerText = "Total cost"
+
+    //    const modalBackdrop = createCostBreakdownModal(hotelData)
+    costBreakdown.addEventListener("click", function(){
+        const modal = createCostBreakdownModal(hotelData)
+        document.body.appendChild(modal)
+    });
+    ratingPricing.appendChild(costBreakdown);
+
     // Append all elements to the main hotel card
     hotelInfo.appendChild(hotelName);
     hotelInfo.appendChild(hotelDetails);
@@ -118,6 +158,13 @@ function createHotelCard(hotelData) {
 
     hotelCard.appendChild(image);
     hotelCard.appendChild(hotelInfo);
+
+
+   
+  uniqueId++
+
+    // hotelCard.appendChild(hotel)
+
 
     return hotelCard;
 }
@@ -132,6 +179,9 @@ function displayHotel(hotelList){
 
 searhButton.addEventListener('click',loadHotels())
 
+
+
+/* the below function is responsible for getting the data from the api */
 async function getData(url){
     try {
       const response = await fetch(url, options);

@@ -222,7 +222,6 @@ body{
   .card{
     display: flex;
     flex-direction: column;
-    background-color: red;
    
   }
   .card img{

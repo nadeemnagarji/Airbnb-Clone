@@ -1,3 +1,7 @@
+
+
+
+
 const locationInput = document.getElementById('locationsearch');
 const checkin = document.getElementById('checkIn')
 const checkout = document.getElementById('checkOut')
@@ -11,6 +15,8 @@ const Url = 'https://airbnb13.p.rapidapi.com/search-location?location=Paris&chec
 let inputData ={};
 
 
+
+  // Your code here
 
 
 let data;
@@ -37,9 +43,9 @@ locationInput.addEventListener('click', function () {
 });
  locationInput.addEventListener('input',  (e)=>{
 console.log(e.target.value);
- let data =  filterData(e.target.value)
+//  let data =  filterData(e.target.value)
  dropdownList.innerHTML=""
- destructData(data)
+//  destructData(data)
 
 })
 
@@ -112,3 +118,7 @@ locationDropdown.addEventListener('click', function (event) {
     locationDropdown.style.display = 'none';
   }
 });
+
+
+
+

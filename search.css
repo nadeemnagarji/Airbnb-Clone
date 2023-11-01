@@ -113,6 +113,9 @@ body{
     display: flex;
 
 }
+.map{
+    width:40% ;
+}
 .hotels{
     /* background-color: red; */
     width: 60%;
